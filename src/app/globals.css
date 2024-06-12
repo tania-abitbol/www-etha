@@ -3,27 +3,99 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+  --foreground-rgb: #000000;
+  --background-rgb: #f9f6f0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--foreground-rgb);
+  background: var(--background-rgb);
+}
+
+.rotating-background {
+  position: relative;
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 24px;
+  color: white;
+}
+
+.rotating-background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  border-radius: 4px;
+  transform: rotate(-2deg);
+  transform-origin: center;
+  z-index: -1;
+}
+
+.underline-custom-left {
+  position: relative;
+}
+
+.underline-custom-left::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 36px;
+  height: 4px;
+  background-color: #f4cd04;
+}
+
+.underline-custom-right {
+  position: relative;
+}
+
+.underline-custom-right::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  width: 36px;
+  height: 4px;
+  background-color: #f4cd04;
+}
+
+.slick-dots li.slick-active .w-5 {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #3b82f6; /* couleur bleue de Tailwind */
+}
+
+.slick-slide > div {
+  padding: 0 10px; /* Adjust the padding as needed */
+}
+
+.slide-item {
+  background-color: #f0f0f0; /* Couleur de fond pour les slides */
+  text-align: center; /* Centrer le texte */
+  border-radius: 8px; /* Coins arrondis */
+}
+
+.custom-paginator {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.custom-paginator .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  transition: transform 0.3s ease;
+}
+
+.custom-paginator .dot.active {
+  transform: scale(1.5);
+  background-color: yellow;
 }
 
 @layer utilities {
