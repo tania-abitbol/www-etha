@@ -22,9 +22,9 @@ export const ProgressBar = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-200 h-4 fixed top-0 left-0 z-50">
+    <div className="w-full bg-gray-200 h-2 fixed top-0 left-0 z-50">
       <div
-        className={`bg-yellow h-4 ${
+        className={`bg-yellow h-2 ${
           scrollTop === 100 ? "" : "rounded-tr-xl rounded-br-xl"
         }`}
         style={{ width: `${scrollTop}%` }}

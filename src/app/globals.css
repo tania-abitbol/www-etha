@@ -15,8 +15,7 @@ body {
 .rotating-background {
   position: relative;
   display: inline-block;
-  padding: 4px 8px;
-  font-size: 24px;
+  padding: 0 8px;
   color: white;
 }
 
@@ -29,7 +28,7 @@ body {
   height: 100%;
   background-color: black;
   border-radius: 4px;
-  transform: rotate(-2deg);
+  transform: rotate(-1deg);
   transform-origin: center;
   z-index: -1;
 }
@@ -101,5 +100,25 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .rotating-background {
+    padding: 8px 16px;
+  }
+
+  .rotating-background::after {
+    transform: rotate(-1deg);
+  }
+
+  .underline-custom-right {
+    position: relative;
+  }
+
+  .underline-custom-right::after {
+    content: "";
+    position: absolute;
+    left: 0;
   }
 }

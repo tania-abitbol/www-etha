@@ -13,6 +13,10 @@ const config: Config = {
       gray: "#6C6C6C",
       white: "#FFFFFF",
     },
+    fontFamily: {
+      title: ['"Lexend Deca"', "sans-serif"],
+      body: ['"Roboto"', "sans-serif"],
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

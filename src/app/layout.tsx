@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto, Lexend_Deca } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
+const lexendDeca = Lexend_Deca({ subsets: ["latin"], weight: ["600"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +20,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.svg" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${lexendDeca.className} ${roboto.className}`}>
+        {children}
+      </body>
     </html>
   );
 }
