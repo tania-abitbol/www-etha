@@ -33,7 +33,7 @@ export const AppSection: FC<AppSectionProps> = ({
     speed: 500,
     slidesToShow: 2,
     slidesToScroll: 1,
-    beforeChange: (_, newIndex: number) => setCurrentSlide(newIndex),
+    beforeChange: (_unused: any, newIndex: number) => setCurrentSlide(newIndex),
   };
 
   return (
