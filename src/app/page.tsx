@@ -157,7 +157,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="md:flex md:justify-between md:mb-32">
+        <div className="md:flex md:justify-between md:mb-32 mb-12">
           <h3 className="font-medium text-3xl mb-12 leading-normal md:w-1/2 md:text-4xl">
             Une{" "}
             <span className="font-extrabold">
@@ -175,13 +175,13 @@ export default function Home() {
 
           <a
             href="mailto:tania@etha.app"
-            className="bg-black md:w-1/2  text-white w-full text-xl font-semibold uppercase py-3 px-4 rounded-xl mb-24 md:max-w-72 text-center"
+            className="bg-black md:w-1/2  text-white w-full text-xl font-semibold uppercase py-3 px-4 rounded-xl mb-24 md:mb-28 md:max-w-72 text-center"
           >
             Nous contacter
           </a>
         </div>
       </div>
-      <footer className="bg-black mx-[-48px] px-24 py-9 flex justify-between items-start md:px-44 pt-12 m-auto">
+      <footer className="bg-black px-12 py-9 flex justify-between items-start md:px-44 pt-12 m-auto">
         <div className="md:flex md:gap-24">
           <div className="md:flex-col">
             <p className="text-white text-xl font-bold mb-2">Etha</p>
