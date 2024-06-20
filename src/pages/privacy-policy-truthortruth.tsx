@@ -7,98 +7,97 @@ const PrivacyPolicyTruthOrTruth = () => (
     <div className="min-h-screen px-8 md:px-32 pt-12 max-w-5xl m-auto">
       <ProgressBar />
       <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center text-blue-700">
-        Politique de Confidentialité Vérité ou Vérité
+        Privacy Policy Truth or Truth
       </h1>
       <p className="text-lg mb-6 text-gray-700 leading-relaxed">
-        Vérité ou Vérité, (ci-après « nous », « notre », ou « nos ») respecte la
-        vie privée de ses utilisateurs (ci-après « utilisateur », « vous » ou «
-        votre ») et s'engage à protéger les données personnelles collectées
-        lorsque vous utilisez notre application de jeu entre amis alcoolisées
-        (ci-après « l'Application »). Cette Politique de Confidentialité
-        explique comment nous collectons, utilisons, divulguons, et sécurisons
-        vos informations lorsque vous utilisez notre Application.
+        Truth or Truth, (hereinafter "we", "our", or "us") respects the privacy
+        of its users (hereinafter "user", "you", or "your") and is committed to
+        protecting the personal data collected when you use our drinking game
+        application (hereinafter "the Application"). This Privacy Policy
+        explains how we collect, use, disclose, and secure your information when
+        you use our Application.
       </p>
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          1. Collecte d'Informations
+          1. Information Collection
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Nous collectons des informations qui ne vous identifient pas
-          personnellement. L'Application peut collecter des informations
-          relatives à votre utilisation, comme les fonctionnalités utilisées et
-          le temps passé sur l'Application.
+          We collect information that does not personally identify you unless
+          you consent to being tracked. The Application may collect
+          usage-related information such as features used and time spent on the
+          Application through Google Analytics to better understand user
+          behavior.
         </p>
       </section>
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          2. Utilisation des Informations
+          2. Use of Information
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Les informations collectées peuvent être utilisées pour :
+          The collected information may be used to:
         </p>
         <ul className="list-disc pl-5 text-lg text-gray-700 leading-relaxed">
-          <li>Fournir, maintenir et améliorer l'Application.</li>
-          <li>Personnaliser votre expérience de jeu.</li>
-          <li>
-            Communiquer avec vous, y compris pour vous envoyer des mises à jour
-            de l'Application et des informations marketing, si vous l'avez
-            autorisé.
-          </li>
-          <li>Réaliser des analyses pour améliorer l'Application.</li>
+          <li>Provide, maintain, and improve the Application.</li>
         </ul>
+        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
+          We do not use the data for personalizing the user experience or for
+          marketing purposes.
+        </p>
       </section>
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          3. Partage des Informations
+          3. Information Sharing
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Nous ne partageons vos informations personnelles avec des tiers que
-          dans les cas suivants :
+          We share your information with third parties only in the following
+          cases:
         </p>
         <ul className="list-disc pl-5 text-lg text-gray-700 leading-relaxed">
-          <li>Avec votre consentement.</li>
+          <li>With your consent.</li>
           <li>
-            Pour se conformer à la loi ou répondre à des procédures légales.
+            With Google Analytics and AdMob for analytics and advertising
+            purposes.
           </li>
         </ul>
-      </section>
-      <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          4. Sécurité des Données
-        </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Nous prenons des mesures de sécurité pour protéger vos informations
-          personnelles contre l'accès non autorisé, la modification, la
-          divulgation ou la destruction. Cependant, aucun système n'est
-          totalement sécurisé, et nous ne pouvons garantir la sécurité absolue
-          de vos informations.
-        </p>
-      </section>
-      <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-3 text-blue-600">5. Vos Droits</h2>
-        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Vous avez le droit d'accéder, de corriger, de supprimer vos données
-          personnelles, ou de vous opposer à leur traitement en nous contactant
-          via les coordonnées fournies dans cette politique.
+          We do not have specific agreements with service providers regarding
+          user data processing.
         </p>
       </section>
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          6. Modifications de la Politique de Confidentialité
+          4. Data Security
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Nous pouvons mettre à jour cette Politique de Confidentialité de temps
-          à autre. Nous vous informerons de tout changement en publiant la
-          nouvelle politique sur cette page.
+          We do not collect personal data requiring security measures.
         </p>
       </section>
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          7. Contactez-Nous
+          5. Your Rights
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Pour toute question ou préoccupation concernant cette Politique de
-          Confidentialité, veuillez nous contacter à{" "}
+          You have the right to access, correct, or delete your personal data,
+          or object to its processing by contacting us via the contact details
+          provided in this policy. You can also opt-out of data collection by
+          refusing the tracking pop-up at the start.
+        </p>
+      </section>
+      <section className="mb-6">
+        <h2 className="text-2xl font-bold mb-3 text-blue-600">
+          6. Changes to the Privacy Policy
+        </h2>
+        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
+          We may update this Privacy Policy annually. We do not notify users of
+          changes; it is the user's responsibility to review the policy
+          periodically.
+        </p>
+      </section>
+      <section className="mb-6">
+        <h2 className="text-2xl font-bold mb-3 text-blue-600">7. Contact Us</h2>
+        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
+          If you have any questions or concerns about this Privacy Policy,
+          please contact us at{" "}
           <a href="mailto:tania@etha.app" className="text-blue-500 underline">
             tania@etha.app
           </a>
@@ -106,9 +105,9 @@ const PrivacyPolicyTruthOrTruth = () => (
         </p>
       </section>
       <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-        En utilisant l'Application, vous consentez à la collecte, l'utilisation,
-        la divulgation et la protection de vos informations comme décrit dans
-        cette Politique de Confidentialité.
+        By using the Application, you consent to the collection, use,
+        disclosure, and protection of your information as described in this
+        Privacy Policy.
       </p>
     </div>
   </main>
