@@ -10,7 +10,7 @@ export default function Home() {
         <header className="flex justify-between items-center mb-16">
           <img src="/logo.svg" alt="" className="w-10 xl:w-20" />
           <a
-            href="mailto:tania@etha.app"
+            href="mailto:contact@etha.app"
             className="text-sm xl:text-xl text-yellow  uppercase font-semibold hover:underline xl:hover:no-underline xl:border-2 xl:rounded-xl xl:py-2 xl:px-9"
           >
             Nous contacter
@@ -174,7 +174,7 @@ export default function Home() {
           </h3>
 
           <a
-            href="mailto:tania@etha.app"
+            href="mailto:contact@etha.app"
             className="bg-black md:w-1/2  text-white w-full text-xl font-semibold uppercase py-3 px-4 rounded-xl mb-24 md:mb-28 md:max-w-72 text-center"
           >
             Nous contacter
@@ -186,7 +186,10 @@ export default function Home() {
           <div className="md:flex-col">
             <p className="text-white text-xl font-bold mb-2">Etha</p>
             <div className="flex flex-col gap-1 mb-8">
-              <a href="mailto:tania@etha.app" className="underline text-white">
+              <a
+                href="mailto:contact@etha.app"
+                className="underline text-white"
+              >
                 Nous contacter
               </a>
               <a href="" className="underline text-white">

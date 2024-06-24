@@ -98,8 +98,8 @@ const PrivacyPolicyTruthOrTruth = () => (
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
           If you have any questions or concerns about this Privacy Policy,
           please contact us at{" "}
-          <a href="mailto:tania@etha.app" className="text-blue-500 underline">
-            tania@etha.app
+          <a href="mailto:contact@etha.app" className="text-blue-500 underline">
+            contact@etha.app
           </a>
           .
         </p>
