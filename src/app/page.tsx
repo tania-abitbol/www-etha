@@ -1,7 +1,19 @@
+"use client";
+import { useEffect } from "react";
 import { AppSection } from "~/components/AppSection";
 import { ProgressBar } from "~/components/progressBar";
+import { logEvent } from "firebase/analytics";
+import { initializeFirebase, analytics } from "../utils/firebase"; // Assurez-vous que le chemin est correct
 
 export default function Home() {
+  useEffect(() => {
+    initializeFirebase();
+
+    if (analytics) {
+      logEvent(analytics, "website");
+    }
+  }, []);
+
   return (
     <main>
       <div className="min-h-screen px-12 md:px-44 pt-12 max-w-[1512px] m-auto">
