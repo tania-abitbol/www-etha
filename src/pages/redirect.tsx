@@ -23,7 +23,11 @@ const RedirectPage = () => {
     return () => clearTimeout(timer);
   }, [router]);
 
-  return null;
+  return (
+    <div>
+      <p>Vous allez être redirigé...</p>
+    </div>
+  );
 };
 
 export default RedirectPage;
