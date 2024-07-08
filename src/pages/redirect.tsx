@@ -12,9 +12,10 @@ const RedirectPage = () => {
       logEvent(analytics, "redirect");
     }
 
+    // Soumettre le formulaire automatiquement après une courte pause
     const timer = setTimeout(() => {
-      window.location.href =
-        "https://apps.apple.com/fr/app/v%C3%A9rit%C3%A9-ou-v%C3%A9rit%C3%A9/id6480046704";
+      const form = document.getElementById("redirectForm") as HTMLFormElement;
+      form?.submit();
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -25,12 +26,22 @@ const RedirectPage = () => {
       <h1>Redirection...</h1>
       <p>Vous allez être redirigé vers l'application dans quelques secondes.</p>
       <p>
-        Si vous n'êtes pas redirigé,
+        Si vous n'êtes pas redirigé,{" "}
         <a href="https://apps.apple.com/fr/app/v%C3%A9rit%C3%A9-ou-v%C3%A9rit%C3%A9/id6480046704">
           cliquez ici
         </a>
         .
       </p>
+
+      <form
+        id="redirectForm"
+        action="https://apps.apple.com/fr/app/v%C3%A9rit%C3%A9-ou-v%C3%A9rit%C3%A9/id6480046704"
+        method="get"
+      >
+        <noscript>
+          <button type="submit">Cliquez ici pour continuer</button>
+        </noscript>
+      </form>
     </div>
   );
 };
