@@ -1,12 +1,19 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  async redirects() {
+  async headers() {
     return [
       {
         source: "/redirect",
-        destination:
-          "https://apps.apple.com/fr/app/v%C3%A9rit%C3%A9-ou-v%C3%A9rit%C3%A9/id6480046704",
-        permanent: true,
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "no-store",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "default-src 'self'; frame-ancestors 'self';",
+          },
+        ],
       },
     ];
   },
