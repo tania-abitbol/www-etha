@@ -28,14 +28,32 @@ export default function Home() {
             Nous contacter
           </a>
         </header>
-
-        <p className="text-2xl md:text-8xl/normal font-semibold text-center px-6  mb-14 md:mb-28 font-title leading-relaxed">
-          LE STUDIO DE CRÉATION{" "}
-          <span className="text-white rotating-background md:text-8xl">
-            D’APPLICATIONS
-          </span>{" "}
-          MOBILE DE DIVERTISSEMENTS
-        </p>
+        <div className="relative">
+          <div className="flex">
+            <p className="z-30 text-2xl md:text-8xl/normal font-semibold text-center px-6 mb-14 md:mb-28 font-title leading-relaxed">
+              LE STUDIO DE CRÉATION{" "}
+              <span className="text-white rotating-background md:text-8xl">
+                D’APPLICATIONS
+              </span>{" "}
+              MOBILE DE DIVERTISSEMENTS
+            </p>
+          </div>
+          <img
+            src="/itemTitle1.svg"
+            alt=""
+            className="absolute w-10 top-0 left-12 md:w-32 md:left-52"
+          />
+          <img
+            src="/itemTitle2.svg"
+            alt=""
+            className="absolute w-10 top-20 md:top-64 right-0 md:w-32 md:right-8"
+          />
+          <img
+            src="/itemTitle3.svg"
+            alt=""
+            className="absolute w-10 bottom-20 left-20 md:bottom-52  md:w-32 md:left-80"
+          />
+        </div>
 
         <AppSection
           name="Bae : Jeu de couple"
@@ -44,27 +62,24 @@ export default function Home() {
         redécouvrir votre relation amoureuse, de renforcer votre lien émotionnel
         et de briser la routine quotidienne, vous serez ravis de découvrir Bae,
         l'application de quiz pour couples !"
-          iosLink=""
+          iosLink="https://apps.apple.com/fr/developer/enzo-hespel/id1574150151"
           androidLink=""
         />
-
         <AppSection
           name="VÉRITÉ ou VÉRITÉ"
           logo="vérité"
           description="Découvrez Vérité ou Vérité, une application qui transforme votre smartphone en l'accessoire ultime pour animer vos soirées entre amis. Plongez dans une aventure sociale captivante avec Vérité ou Vérité, l'application dynamique qui redéfinit le divertissement en groupe !"
-          iosLink=""
+          iosLink="https://apps.apple.com/fr/app/v%C3%A9rit%C3%A9-ou-v%C3%A9rit%C3%A9/id6480046704"
           androidLink=""
           reversed
         />
-
         <AppSection
           name="Pour Combien ?"
           logo="pcb"
           description="Pour Combien est une application sociale innovante qui pimente chaque rassemblement en mettant à l'épreuve la bravoure et l'esprit d'aventure de vos amis. Idéale pour les soirées, cette application vous permet de lancer des défis audacieux ou humoristiques à vos amis, en leur demandant : 'Pour combien tu ferais ça ?'"
-          iosLink=""
+          iosLink="https://apps.apple.com/fr/app/pour-combien-jeu-entre-amis/id6480013361"
           androidLink=""
         />
-
         <div className="lg:flex items-center gap-20 mb-24 md:mb-52">
           <img
             src="/images/map.svg"
