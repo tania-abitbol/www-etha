@@ -39,17 +39,17 @@ export default function Home() {
             </p>
           </div>
           <img
-            src="/itemTitle1.svg"
+            src="/images/itemTitle1.svg"
             alt=""
             className="absolute w-10 top-0 left-12 md:w-32 md:left-52"
           />
           <img
-            src="/itemTitle2.svg"
+            src="/images/itemTitle2.svg"
             alt=""
             className="absolute w-10 top-20 md:top-64 right-0 md:w-32 md:right-8"
           />
           <img
-            src="/itemTitle3.svg"
+            src="/images/itemTitle3.svg"
             alt=""
             className="absolute w-10 bottom-20 left-20 md:bottom-52  md:w-32 md:left-80"
           />
@@ -81,11 +81,34 @@ export default function Home() {
           androidLink=""
         />
         <div className="lg:flex items-center gap-20 mb-24 md:mb-52">
-          <img
-            src="/images/map.svg"
-            alt=""
-            className="w-full mt-20 mb-9 md:mb-0 order-1 md:order-2"
-          />
+          <div className="lg:min-w-max mt-20 mb-9 md:mb-0 order-1 md:order-2 relative">
+            <img src="/images/map.svg" alt="" className="" />
+            <img
+              src="/images/point.svg"
+              alt=""
+              className="w-6 md:w-10 absolute top-12 left-6 md:top-28 md:left-14 animate-pulse"
+            />
+            <img
+              src="/images/point.svg"
+              alt=""
+              className="w-6 md:w-10 absolute top-12 right-6 md:top-28 md:right-14 animate-pulse"
+            />
+            <img
+              src="/images/point.svg"
+              alt=""
+              className="w-6 md:w-10 absolute top-20 right-36 md:top-52 md:right-52 animate-pulse"
+            />
+            <img
+              src="/images/point.svg"
+              alt=""
+              className="w-6 md:w-10 absolute top-24 left-12 md:top-72 md:left-44 animate-pulse"
+            />
+            <img
+              src="/images/point.svg"
+              alt=""
+              className="w-6 md:w-10 absolute top-24 left-44 md:top-44 md:left-72 animate-pulse"
+            />
+          </div>
           <div>
             <h3 className="text-3xl md:text-6xl font-body font-bold mb-4">
               International
