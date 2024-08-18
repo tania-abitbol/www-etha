@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "com.bae.app",
+        "paths": [
+          "/resetPassword/*"
+        ]
+      }
+    ]
+  }
+}
