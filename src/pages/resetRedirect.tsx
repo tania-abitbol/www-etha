@@ -5,10 +5,7 @@ export const getServerSideProps: GetServerSideProps = async (
 ) => {
   const { url } = context.query;
 
-  if (
-    typeof url === "string" &&
-    (url.startsWith("http://") || url.startsWith("https://"))
-  ) {
+  if (typeof url === "string" && url.startsWith("bae:///")) {
     return {
       redirect: {
         destination: url,
