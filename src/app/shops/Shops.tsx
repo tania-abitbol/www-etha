@@ -95,6 +95,7 @@ export default function Shops() {
       toggleModal();
     } catch (error) {
       console.error("Erreur lors de la précommande :", error);
+    } finally {
     }
   };
 
@@ -220,18 +221,26 @@ export default function Shops() {
               className="flex items-center gap-4 justify-between md:items-center mb-6"
               ref={buttonRef}
             >
-              <p className="text-xl text-black md:text-2xl">14,95 €</p>
+              <p className="text-xl text-black md:text-2xl">
+                14,95 €{" "}
+                <span className="text-xs text-gray-800 self-end justify-end align-top">
+                  *
+                </span>
+              </p>
               <PreOrderButton onPress={handlePreOrder} hasIcon type={state}>
                 Précommander
               </PreOrderButton>
             </div>
-            <div className="border-[1px] border-gray-500 p-4 rounded-lg flex items-center gap-4 md:gap-6">
+            <div className="border-[1px] border-gray-500 p-4 rounded-lg flex items-center gap-4 md:gap-6 mb-4">
               <ClockSVG width={32} height={32} className="text-gray-800" />
               <p className="font-inter font-normal text-sm leading-normal text-left text-gray-800 md:text-base">
                 Les packs seront livrés entre 2 et 10 jours ouvrés après la
                 commande en fonction de votre localisation.
               </p>
             </div>
+            <span className="text-xs text-gray-800 text-left">
+              *frais de livraison inclus
+            </span>
           </div>
         </div>
 

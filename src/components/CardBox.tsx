@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh, TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Html } from "@react-three/drei";
 
 const CardBox = ({ state }: { state: "bae" | "vouv" }) => {
   const meshRef = useRef<Mesh>(null);
@@ -45,33 +46,39 @@ export const ThreeDScene = ({ state }: { state: "bae" | "vouv" }) => {
       style={{ width: "60px", height: "60px", cursor: "pointer" }}
       camera={{ position: [0, 0, 6], fov: 40 }}
     >
-      {/* Lumière ambiante */}
-      <ambientLight intensity={0.4} />
+      <Suspense
+        fallback={
+          <Html center>
+            <div>Chargement...</div>
+          </Html>
+        }
+      >
+        {/* Lumière ambiante */}
+        <ambientLight intensity={0.4} />
 
-      {/* Lumière directionnelle */}
-      <directionalLight
-        intensity={1}
-        position={[5, 5, 5]}
-        castShadow
-        shadow-mapSize={[1024, 1024]} // Ombres haute qualité
-      />
+        {/* Lumière directionnelle */}
+        <directionalLight
+          intensity={1}
+          position={[5, 5, 5]}
+          castShadow
+          shadow-mapSize={[1024, 1024]} // Ombres haute qualité
+        />
 
-      {/* Lumière ponctuelle */}
-      <pointLight intensity={0.5} position={[-5, 5, -5]} />
+        {/* Lumière ponctuelle */}
+        <pointLight intensity={0.5} position={[-5, 5, -5]} />
 
-      {/* Environnement HDRI */}
+        <CardBox state={state} />
 
-      <CardBox state={state} />
-
-      {/* Contrôles de caméra */}
-      <OrbitControls
-        enableZoom={false}
-        target={[0, 0, 0]}
-        minDistance={5}
-        maxDistance={5}
-        minPolarAngle={Math.PI / 2} // Limite la rotation sur l'axe X
-        maxPolarAngle={Math.PI / 2} // Empêche l'inclinaison de la caméra
-      />
+        {/* Contrôles de caméra */}
+        <OrbitControls
+          enableZoom={false}
+          target={[0, 0, 0]}
+          minDistance={5}
+          maxDistance={5}
+          minPolarAngle={Math.PI / 2} // Limite la rotation sur l'axe X
+          maxPolarAngle={Math.PI / 2} // Empêche l'inclinaison de la caméra
+        />
+      </Suspense>
     </Canvas>
   );
 };
