@@ -159,13 +159,13 @@ export default function Shops() {
 
         {/* Header */}
         <div className="relative text-center mb-8 md:mb-16 pt-8 md:pt-0">
-          <div className="relative flex items-center justify-center h-24 lg:h-32">
+          <div className="relative flex items-center justify-center transition-all duration-500  h-24 lg:h-32">
             {/* BAE */}
             <h1
-              className={`absolute top-1/2 transform transition-all duration-500 ease-in-out cursor-pointer font-bold font-baloo ${
+              className={`absolute top-1/2 transition-all -translate-y-1/2 duration-500 cursor-pointer font-bold font-baloo ${
                 state === "bae"
-                  ? "text-bae-primary scale-110 translate-x-0 -translate-y-1/2 text-5xl md:text-6xl lg:text-8xl"
-                  : "text-gray-400 scale-100 -translate-x-[200%] md:-translate-x-[300%] -translate-y-1/2 text-3xl md:text-4xl hover:scale-105 hover:text-bae-primary"
+                  ? "text-bae-primary text-5xl md:text-6xl lg:text-8xl left-1/2 transform -translate-x-1/2"
+                  : "text-gray-400 text-5xl md:text-4xl left-[7%] sm:left-[20%] md:left-[30%] hover:text-bae-primary"
               }`}
               onClick={() => handleClick("bae")}
             >
@@ -174,17 +174,16 @@ export default function Shops() {
 
             {/* VouV */}
             <h1
-              className={`absolute top-1/2 transform transition-all duration-500 ease-in-out cursor-pointer font-bold font-baloo ${
+              className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 cursor-pointer font-bold font-baloo ${
                 state === "vouv"
-                  ? "text-vouv-primary scale-110 translate-x-0 -translate-y-1/2 text-5xl md:text-6xl lg:text-8xl"
-                  : "text-gray-400 scale-100 translate-x-[130%] md:translate-x-[200%] -translate-y-1/2 text-3xl md:text-4xl hover:scale-105 hover:text-vouv-primary"
+                  ? "text-vouv-primary text-5xl md:text-6xl lg:text-8xl"
+                  : "text-gray-400 text-5xl md:text-4xl left-[80%] sm:left-[70%] md:left-[65%] top-1/2 transform -translate-y-1/2 hover:text-vouv-primary"
               }`}
               onClick={() => handleClick("vouv")}
             >
               VouV
             </h1>
           </div>
-
           <p className="text-gray-800 font-semibold font-inter text-base md:text-lg lg:text-xl ">
             Précommandez cette première édition
           </p>
