@@ -5,7 +5,8 @@ import "~/app/globals.css";
 const PrivacyPolicyTruthOrTruth = () => (
   <main>
     <div className="min-h-screen px-8 md:px-32 pt-12 max-w-5xl m-auto">
-      <ProgressBar />
+      <ProgressBar color="bg-yellow" bg="bg-yellow-lighter" />
+
       <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center text-blue-700">
         Privacy Policy Truth or Truth
       </h1>

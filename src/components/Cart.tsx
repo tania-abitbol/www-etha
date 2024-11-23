@@ -153,10 +153,8 @@ const CartModal: React.FC<CartModalProps> = ({
                     backgroundSize: "1rem",
                   }}
                 >
-                  {[...Array(10).keys()].map((i) => (
-                    <option key={i + 1} value={i + 1}>
-                      {i + 1}
-                    </option>
+                  {[...Array.from(Array(10).keys())].map((i) => (
+                    <option key={i}>{i}</option>
                   ))}
                 </select>
 
