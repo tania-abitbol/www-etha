@@ -158,8 +158,8 @@ export default function Shops() {
         </div>
 
         {/* Header */}
-        <div className="relative text-center mb-8 md:mb-16">
-          <div className="relative flex items-center justify-center transition-all duration-500 h-16 lg:h-32">
+        <div className="relative text-center mb-8 md:mb-16 pt-8 md:pt-0">
+          <div className="relative flex items-center justify-center transition-all duration-500  h-24 lg:h-32">
             {/* BAE */}
             <h1
               className={`absolute top-1/2 transition-all -translate-y-1/2 duration-500 cursor-pointer font-bold font-baloo ${
