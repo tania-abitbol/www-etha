@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSearchParams } from "next/navigation";
+import { logEvent } from "firebase/analytics";
 
 import { ClockSVG } from "~/assets/icons/clock";
 import { PreOrderButton } from "~/components/PreOrderButton";
@@ -17,6 +18,7 @@ import { CartSVG } from "~/assets/icons/cart";
 import { Footer } from "~/components/Footer";
 
 import { Paginator } from "~/components/Paginator";
+import { initializeFirebase, analytics } from "~/utils/firebase";
 
 export default function Shops() {
   const buttonRef = useRef(null);
@@ -28,6 +30,14 @@ export default function Shops() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    initializeFirebase();
+
+    if (analytics) {
+      logEvent(analytics, "shops");
+    }
+  }, []);
 
   useEffect(() => {
     const urlState = searchParams?.get("app");

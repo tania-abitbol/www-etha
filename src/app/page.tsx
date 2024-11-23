@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { AppSection } from "~/components/AppSection";
 import { ProgressBar } from "~/components/progressBar";
 import { logEvent } from "firebase/analytics";
-import { initializeFirebase, analytics } from "../utils/firebase"; // Assurez-vous que le chemin est correct
+import { initializeFirebase, analytics } from "../utils/firebase";
 import { Footer } from "~/components/Footer";
 
 export default function Home() {
