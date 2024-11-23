@@ -233,10 +233,10 @@ export default function Shops() {
               </PreOrderButton>
             </div>
             <div className="border-[1px] border-gray-500 p-4 rounded-lg flex items-center gap-4 md:gap-6 mb-4">
-              <ClockSVG width={32} height={32} className="text-gray-800" />
+              <ClockSVG width={50} height={50} className="text-gray-800" />
               <p className="font-inter font-normal text-sm leading-normal text-left text-gray-800 md:text-base">
-                Les packs seront livrés entre 2 et 10 jours ouvrés après la
-                commande en fonction de votre localisation.
+                Les packs seront expédiés à partir du 1er décembre et livrés
+                sous 3 à 5 jours ouvrés, selon votre localisation.
               </p>
             </div>
             <span className="text-xs text-gray-800 text-left">
