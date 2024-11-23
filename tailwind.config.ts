@@ -39,7 +39,7 @@ const config: Config = {
 
     extend: {
       fontFamily: {
-        baloo: ['"Baloo 2"', "cursive"],
+        baloo: ['"Baloo 2"', "sans-serif"],
         inter: ['"Inter"', "sans-serif"],
         body: "var(--font-roboto)",
         title: "var(--font-lexend-deca)",
