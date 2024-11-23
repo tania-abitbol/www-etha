@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Roboto, Lexend_Deca, Pacifico } from "next/font/google";
+import { Roboto, Lexend_Deca, Pacifico, Baloo_2 } from "next/font/google";
 import "./globals.css";
 
 const pacifico = Pacifico({
@@ -7,6 +7,12 @@ const pacifico = Pacifico({
   weight: ["400"],
   variable: "--font-pacifico",
 });
+const baloo = Baloo_2({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-baloo",
+});
+
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "700"],
@@ -35,7 +41,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" />
       </head>
       <body
-        className={`${roboto.variable} ${lexendDeca.variable} ${pacifico.variable}`}
+        className={`${roboto.variable} ${lexendDeca.variable} ${pacifico.variable} ${baloo.variable}`}
       >
         {children}
       </body>
