@@ -4,6 +4,7 @@ import { AppSection } from "~/components/AppSection";
 import { ProgressBar } from "~/components/progressBar";
 import { logEvent } from "firebase/analytics";
 import { initializeFirebase, analytics } from "../utils/firebase"; // Assurez-vous que le chemin est correct
+import { Footer } from "~/components/Footer";
 
 export default function Home() {
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function Home() {
   return (
     <main>
       <div className="min-h-screen px-12 md:px-44 pt-12 max-w-[1512px] m-auto">
-        <ProgressBar />
+        <ProgressBar color="bg-yellow" bg="bg-yellow-lighter" />
 
         <header className="flex justify-between items-center mb-16">
           <img src="/logo.svg" alt="" className="w-10 xl:w-20" />
@@ -113,7 +114,7 @@ export default function Home() {
             <h3 className="text-3xl md:text-6xl font-body font-bold mb-4">
               International
             </h3>
-            <p className="text-sm/normal md:text-xl/normal font-body font-normal text-gray text-justify">
+            <p className="text-sm/normal md:text-xl/normal font-body font-normal text-gray-500-500 text-justify">
               Nos applications connaissent un grand succès et sont actuellement
               disponibles et activement utilisées dans de nombreux pays à
               travers le monde, notamment dans les régions hispanophones,
@@ -131,7 +132,7 @@ export default function Home() {
                 <h3 className="text-6xl font-bold mb-2">
                   5<span className="text-yellow">+</span>
                 </h3>
-                <p className="font-bold text-gray">
+                <p className="font-bold text-gray-500">
                   Nouvelles applications en 1 an
                 </p>
               </div>
@@ -141,7 +142,7 @@ export default function Home() {
                   <h3 className="text-6xl font-bold mb-2 self-end">
                     500K<span className="text-yellow">+</span>
                   </h3>
-                  <p className="font-bold text-gray self-end">
+                  <p className="font-bold text-gray-500 self-end">
                     Téléchargements
                   </p>
                 </div>
@@ -152,7 +153,7 @@ export default function Home() {
                 <h3 className="text-6xl font-bold mb-2">
                   500<span className="text-yellow">+</span>
                 </h3>
-                <p className="font-bold text-gray">Notes positives</p>
+                <p className="font-bold text-gray-500">Notes positives</p>
               </div>
 
               <div className="flex flex-col mb-10">
@@ -160,7 +161,9 @@ export default function Home() {
                   <h3 className="text-6xl font-bold mb-2 self-end">
                     50<span className="text-yellow">+</span>
                   </h3>
-                  <p className="font-bold text-gray self-end">Pays touchées</p>
+                  <p className="font-bold text-gray-500 self-end">
+                    Pays touchées
+                  </p>
                 </div>
               </div>
             </div>
@@ -169,7 +172,7 @@ export default function Home() {
             <h3 className="text-3xl font-bold mb-4 md:text-6xl">
               Les chiffres
             </h3>
-            <p className="text-sm/normal md:text-xl/normal font-body font-normal text-gray text-justify">
+            <p className="text-sm/normal md:text-xl/normal font-body font-normal text-gray-500 text-justify">
               Nous sommes transparents quant à nos chiffres et fiers de voir que
               des personnes du monde entier passent des moments de qualité avec
               leurs proches grâce à nos applications. Nous nous engageons à
@@ -196,7 +199,7 @@ export default function Home() {
             <h3 className="text-3xl md:text-6xl font-body font-bold mb-4">
               Qui sommes nous <span className="text-yellow">?</span>
             </h3>
-            <p className="text-sm/normal md:text-xl/normal font-body font-normal text-gray text-justify">
+            <p className="text-sm/normal md:text-xl/normal font-body font-normal text-gray-500 text-justify">
               Enzo Hespel et Tania Abitbol, tous deux développeurs Front-end de
               formation, ont mis à profit leurs compétences techniques et leur
               expérience pour créer des produits qui répondent aux besoins des
@@ -207,7 +210,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="md:flex md:justify-between md:mb-32 mb-12">
+        <div className="md:flex md:justify-betwee">
           <h3 className="font-medium text-3xl mb-12 leading-normal md:w-1/2 md:text-4xl">
             Une{" "}
             <span className="font-extrabold">
@@ -231,45 +234,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <footer className="bg-black px-12 py-9 flex justify-between items-start md:px-44 pt-12 m-auto">
-        <div className="md:flex md:gap-24">
-          <div className="md:flex-col">
-            <p className="text-white text-xl font-bold mb-2">Etha</p>
-            <div className="flex flex-col gap-1 mb-8">
-              <a
-                href="mailto:contact@etha.app"
-                className="underline text-white"
-              >
-                Nous contacter
-              </a>
-              <a href="" className="underline text-white">
-                Qui sommes-nous ?
-              </a>
-              <a href="" className="underline text-white">
-                International
-              </a>
-            </div>
-          </div>
-          <div className="md:flex-col">
-            <p className="text-white text-xl font-bold mb-2">
-              Nos applications
-            </p>
-
-            <div className="flex flex-col gap-1">
-              <a href="" className="underline text-white">
-                Bae : jeu de couple
-              </a>
-              <a href="" className="underline text-white">
-                Vérité ou Vérité
-              </a>
-              <a href="" className="underline text-white">
-                Pour combien ?
-              </a>
-            </div>
-          </div>
-        </div>
-        <img src="/logo-white.svg" alt="" className="w-16" />
-      </footer>
+      <Footer color="bg-black" />
     </main>
   );
 }

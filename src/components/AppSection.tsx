@@ -84,7 +84,11 @@ export const AppSection: FC<AppSectionProps> = ({
             </div>
           ))}
         </Slider>
-        <Paginator currentSlide={currentSlide} totalSlides={4} />
+        <Paginator
+          currentSlide={currentSlide}
+          totalSlides={4}
+          color="bg-yellow"
+        />
       </div>
     </section>
   );

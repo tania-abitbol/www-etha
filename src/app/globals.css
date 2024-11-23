@@ -5,11 +5,24 @@
 :root {
   --foreground-rgb: #000000;
   --background-rgb: #f9f6f0;
+  --font-roboto: "Roboto", cursive;
+  --font-lexend-deca: "Lexend Deca", cursive;
+  --font-pacifico: "Pacifico", cursive;
 }
 
 body {
   color: var(--foreground-rgb);
   background: var(--background-rgb);
+}
+
+.image-dezoom {
+  object-fit: cover;
+  transform: scale(0.8); /* Réduit l'image à 80% de sa taille */
+  transition: transform 0.3s ease; /* Animation pour effet fluide */
+}
+
+.image-dezoom:hover {
+  transform: scale(1); /* Réinitialise au zoom normal au survol */
 }
 
 .rotating-background {

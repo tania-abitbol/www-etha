@@ -2,7 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 
-export const ProgressBar = () => {
+type ProgressBarProps = {
+  color: string;
+  bg: string;
+};
+
+export const ProgressBar = ({ color, bg }: ProgressBarProps) => {
   const [scrollTop, setScrollTop] = useState(0);
 
   useEffect(() => {
@@ -22,9 +27,9 @@ export const ProgressBar = () => {
   }, []);
 
   return (
-    <div className="w-full bg-gray-200 h-2 fixed top-0 left-0 z-50">
+    <div className={`w-full ${bg} h-2 fixed top-0 left-0 z-50`}>
       <div
-        className={`bg-yellow h-2 ${
+        className={`${color} h-2 ${
           scrollTop === 100 ? "" : "rounded-tr-xl rounded-br-xl"
         }`}
         style={{ width: `${scrollTop}%` }}

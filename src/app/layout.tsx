@@ -1,9 +1,22 @@
 import type { Metadata } from "next";
-import { Roboto, Lexend_Deca } from "next/font/google";
+import { Roboto, Lexend_Deca, Pacifico } from "next/font/google";
 import "./globals.css";
 
-const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
-const lexendDeca = Lexend_Deca({ subsets: ["latin"], weight: ["600"] });
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-pacifico",
+});
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-roboto",
+});
+const lexendDeca = Lexend_Deca({
+  subsets: ["latin"],
+  weight: ["600"],
+  variable: "--font-lexend-deca",
+});
 
 export const metadata: Metadata = {
   title: "Etha Studio",
@@ -21,7 +34,9 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/logo.svg" />
       </head>
-      <body className={`${lexendDeca.className} ${roboto.className}`}>
+      <body
+        className={`${roboto.variable} ${lexendDeca.variable} ${pacifico.variable}`}
+      >
         {children}
       </body>
     </html>
