@@ -165,7 +165,7 @@ export default function Shops() {
               className={`absolute top-1/2 transform transition-all duration-500 ease-in-out cursor-pointer font-bold font-baloo ${
                 state === "bae"
                   ? "text-bae-primary scale-110 translate-x-0 -translate-y-1/2 text-5xl md:text-6xl lg:text-8xl"
-                  : "text-gray-400 scale-100 -translate-x-[300%] -translate-y-1/2 text-3xl md:text-4xl hover:scale-105 hover:text-bae-primary"
+                  : "text-gray-400 scale-100 -translate-x-[200%] md:-translate-x-[300%] -translate-y-1/2 text-3xl md:text-4xl hover:scale-105 hover:text-bae-primary"
               }`}
               onClick={() => handleClick("bae")}
             >
@@ -177,7 +177,7 @@ export default function Shops() {
               className={`absolute top-1/2 transform transition-all duration-500 ease-in-out cursor-pointer font-bold font-baloo ${
                 state === "vouv"
                   ? "text-vouv-primary scale-110 translate-x-0 -translate-y-1/2 text-5xl md:text-6xl lg:text-8xl"
-                  : "text-gray-400 scale-100 translate-x-[200%] -translate-y-1/2 text-3xl md:text-4xl hover:scale-105 hover:text-vouv-primary"
+                  : "text-gray-400 scale-100 translate-x-[130%] md:translate-x-[200%] -translate-y-1/2 text-3xl md:text-4xl hover:scale-105 hover:text-vouv-primary"
               }`}
               onClick={() => handleClick("vouv")}
             >
