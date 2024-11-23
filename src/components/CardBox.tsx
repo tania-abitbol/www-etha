@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { TextureLoader, sRGBEncoding } from "three";
+import { Mesh, TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 
 const CardBox = ({ state }: { state: "bae" | "vouv" }) => {
-  const meshRef = useRef();
+  const meshRef = useRef<Mesh>(null);
 
   // Charger les textures pour chaque face de la boîte
   const [front, back, left, right, top, bottom] = useLoader(TextureLoader, [
@@ -16,11 +16,6 @@ const CardBox = ({ state }: { state: "bae" | "vouv" }) => {
     `/textures/${state}/top.jpg`,
     `/textures/${state}/bottom.jpg`,
   ]);
-
-  // Activer le sRGBEncoding pour une meilleure gestion des couleurs
-  [front, back, left, right, top, bottom].forEach((texture) => {
-    texture.encoding = sRGBEncoding;
-  });
 
   // Faire tourner le cube
   useFrame(() => {
