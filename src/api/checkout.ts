@@ -61,7 +61,6 @@ export async function createCheckout(variantId: string, quantity: number) {
 }
 
 export async function getCheckout(checkoutId: string) {
-  console.log("checkoutId", checkoutId);
   const SHOPIFY_API_URL = process.env.NEXT_PUBLIC_SHOPIFY_API_URL;
   const SHOPIFY_API_KEY = process.env.NEXT_PUBLIC_STOREFRONT_API_KEY;
 
@@ -210,6 +209,10 @@ export async function updateLineItemQuantity(
   const SHOPIFY_API_URL = process.env.NEXT_PUBLIC_SHOPIFY_API_URL;
   const SHOPIFY_API_KEY = process.env.NEXT_PUBLIC_STOREFRONT_API_KEY;
 
+  if (!SHOPIFY_API_URL || !SHOPIFY_API_KEY) {
+    throw new Error("L'URL de l'API Shopify ou la clé API est manquante.");
+  }
+
   const mutation = `
     mutation {
       checkoutLineItemsUpdate(checkoutId: "${checkoutId}", lineItems: [
@@ -269,6 +272,10 @@ export async function updateLineItemQuantity(
 export async function deleteLineItem(checkoutId: string, lineItemId: string) {
   const SHOPIFY_API_URL = process.env.NEXT_PUBLIC_SHOPIFY_API_URL;
   const SHOPIFY_API_KEY = process.env.NEXT_PUBLIC_STOREFRONT_API_KEY;
+
+  if (!SHOPIFY_API_URL || !SHOPIFY_API_KEY) {
+    throw new Error("L'URL de l'API Shopify ou la clé API est manquante.");
+  }
 
   const mutation = `
     mutation {
