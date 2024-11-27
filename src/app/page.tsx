@@ -1,10 +1,14 @@
 "use client";
 import { useEffect } from "react";
+
 import { AppSection } from "~/components/AppSection";
 import { ProgressBar } from "~/components/progressBar";
 import { logEvent } from "firebase/analytics";
-import { initializeFirebase, analytics } from "../utils/firebase";
 import { Footer } from "~/components/Footer";
+import { BottomBanner } from "~/components/BottomBanner";
+
+import { initializeFirebase, analytics } from "../utils/firebase";
+import { PreOrderButton } from "~/components/PreOrderButton";
 
 export default function Home() {
   useEffect(() => {
@@ -14,6 +18,10 @@ export default function Home() {
       logEvent(analytics, "website");
     }
   }, []);
+
+  const handleShopPress = () => {
+    console.log("navigate on shop");
+  };
 
   return (
     <main>
@@ -234,6 +242,21 @@ export default function Home() {
           </a>
         </div>
       </div>
+      <BottomBanner>
+        <div className="md:flex flex-col hidden">
+          <p className="text-sm font-bold font-baloo sm:text-base md:text-lg">
+            Découvrez nos nouveaux jeux de société !
+          </p>
+          <p className="text-xs sm:text-sm md:text-base">
+            Parfaits pour animer vos soirées entre couple ou partager des
+            moments uniques entre amis.
+          </p>
+        </div>
+
+        <PreOrderButton onPress={handleShopPress}>
+          Voir la boutique
+        </PreOrderButton>
+      </BottomBanner>
       <Footer color="bg-black" />
     </main>
   );

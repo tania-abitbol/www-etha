@@ -104,7 +104,7 @@ export default function Shops() {
 
       toggleModal();
     } catch (error) {
-      console.error("Erreur lors de la précommande :", error);
+      console.error("Erreur lors de la commande :", error);
     } finally {
     }
   };
@@ -195,7 +195,7 @@ export default function Shops() {
             </h1>
           </div>
           <p className="text-gray-800 font-semibold font-inter text-base md:text-lg lg:text-xl ">
-            Précommandez cette première édition
+            Commander cette première édition
           </p>
         </div>
 
@@ -238,7 +238,7 @@ export default function Shops() {
                 </span>
               </p>
               <PreOrderButton onPress={handlePreOrder} hasIcon type={state}>
-                Précommander
+                Commander
               </PreOrderButton>
             </div>
             <div className="border-[1px] border-gray-500 p-4 rounded-lg flex items-center gap-4 md:gap-6 mb-4">
@@ -483,7 +483,7 @@ export default function Shops() {
                 fullWidth
                 type={state}
               >
-                Précommander
+                Commander
               </PreOrderButton>
             </div>
           </div>

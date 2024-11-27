@@ -8,7 +8,7 @@ export const PreOrderButton = ({
   children,
   onPress,
 }: PropsWithChildren<{
-  type: "bae" | "vouv";
+  type?: "bae" | "vouv";
   hasIcon?: boolean;
   fullWidth?: boolean;
   onPress: () => void;
@@ -52,10 +52,14 @@ export const PreOrderButton = ({
       )}
 
       <button
-        className={`relative px-4 py-2 md:py-4 bg-white text-black font-semibold rounded-md flex items-center gap-2 md:gap-4 z-10 ${
-          type === "bae" ? "hover:bg-bae-primary" : "hover:bg-vouv-primary"
-        } hover:text-white ease-in transition-all ${
+        className={`relative px-4 py-2 md:py-4 text-black font-semibold rounded-md flex items-center gap-2 md:gap-4 z-10 ease-in transition-all ${
           fullWidth ? "w-full md:w-auto justify-center py-4" : ""
+        } ${
+          type
+            ? type === "bae"
+              ? "bg-white hover:bg-bae-primary hover:text-white"
+              : "bg-white hover:bg-vouv-primary hover:text-white"
+            : "bg-white hover:bg-yellow text-black"
         }`}
       >
         {hasIcon && <CartSVG width={20} height={20} />}

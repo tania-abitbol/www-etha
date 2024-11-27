@@ -2,7 +2,7 @@ import { initializeApp, FirebaseApp } from "firebase/app";
 import { getAnalytics, Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyALzRBBKv6urebm9d0Z8ENHPpYVaKpKY6A",
+  apiKey: "AIzaSyALzRBBKv6urebm9d0Z8ENHPpYVaKpKY6Ad",
   authDomain: "etha-2f277.firebaseapp.com",
   projectId: "etha-2f277",
   storageBucket: "etha-2f277.appspot.com",
