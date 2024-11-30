@@ -29,6 +29,39 @@ export default function Shops() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const searchParams = useSearchParams();
+  const scrollTracked = useRef({ 25: false, 50: false, 75: false, 95: false });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled =
+        (window.scrollY / (document.body.scrollHeight - window.innerHeight)) *
+        100;
+
+      // Tracker les seuils de scroll
+      if (scrolled >= 25 && !scrollTracked.current[25]) {
+        trackEvent("scroll_depth", { depth: 25 });
+        scrollTracked.current[25] = true;
+      }
+      if (scrolled >= 50 && !scrollTracked.current[50]) {
+        trackEvent("scroll_depth", { depth: 50 });
+        scrollTracked.current[50] = true;
+      }
+      if (scrolled >= 75 && !scrollTracked.current[75]) {
+        trackEvent("scroll_depth", { depth: 75 });
+        scrollTracked.current[75] = true;
+      }
+      if (scrolled >= 95 && !scrollTracked.current[95]) {
+        trackEvent("scroll_depth", { depth: 100 });
+        scrollTracked.current[95] = true;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const urlState = searchParams?.get("app");
