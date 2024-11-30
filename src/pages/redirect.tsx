@@ -2,12 +2,10 @@
 
 import { useEffect } from "react";
 import { logEvent } from "firebase/analytics";
-import { initializeFirebase, analytics } from "../utils/firebase";
+import { analytics } from "../utils/firebase";
 
 const RedirectPage = () => {
   useEffect(() => {
-    initializeFirebase();
-
     if (analytics) {
       logEvent(analytics, "redirect");
     }

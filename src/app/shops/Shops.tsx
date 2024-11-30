@@ -5,7 +5,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSearchParams } from "next/navigation";
-import { logEvent } from "firebase/analytics";
 
 import { ClockSVG } from "~/assets/icons/clock";
 import { PreOrderButton } from "~/components/PreOrderButton";
@@ -18,26 +17,18 @@ import { CartSVG } from "~/assets/icons/cart";
 import { Footer } from "~/components/Footer";
 
 import { Paginator } from "~/components/Paginator";
-import { initializeFirebase, analytics } from "~/utils/firebase";
+import { trackEvent } from "~/utils/firebase";
 
 export default function Shops() {
   const buttonRef = useRef(null);
   const [isButtonVisible, setIsButtonVisible] = useState(true);
   const [state, setState] = useState<"bae" | "vouv">("bae");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
   const [checkoutUrl, setCheckoutUrl] = useState<string>("");
   const [checkoutId, setCheckoutId] = useState<string>("");
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const searchParams = useSearchParams();
-
-  useEffect(() => {
-    initializeFirebase();
-
-    if (analytics) {
-      logEvent(analytics, "shops");
-    }
-  }, []);
 
   useEffect(() => {
     const urlState = searchParams?.get("app");
@@ -48,8 +39,13 @@ export default function Shops() {
     }
   }, [searchParams]);
 
-  const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
+  const toggleCart = () => {
+    const newState = !isCartOpen;
+    setIsCartOpen(newState);
+
+    trackEvent(newState ? "cart_open" : "cart_close", {
+      modal: "cart",
+    });
   };
 
   const settings = {
@@ -70,6 +66,8 @@ export default function Shops() {
           ? "gid://shopify/ProductVariant/53723262746950"
           : "gid://shopify/ProductVariant/53723292762438";
 
+      trackEvent("preorder_attempt", { product: state, variantId });
+
       let currentCheckoutId = localStorage.getItem("checkoutId");
 
       if (currentCheckoutId) {
@@ -79,7 +77,8 @@ export default function Shops() {
         );
 
         if (existingItem) {
-          toggleModal();
+          toggleCart();
+          trackEvent("item_already_in_cart", { product: state, variantId });
           return;
         }
 
@@ -102,8 +101,10 @@ export default function Shops() {
         localStorage.setItem("checkoutUrl", newCheckout.webUrl);
       }
 
-      toggleModal();
+      trackEvent("item_added_to_cart", { product: state, variantId });
+      toggleCart();
     } catch (error) {
+      trackEvent("preorder_error", { error: error });
       console.error("Erreur lors de la commande :", error);
     } finally {
     }
@@ -111,6 +112,7 @@ export default function Shops() {
 
   const handleClick = (value: "bae" | "vouv") => {
     setState(value);
+    trackEvent("state_change", { state: value });
   };
 
   useEffect(() => {
@@ -162,7 +164,7 @@ export default function Shops() {
             maxWidth: "calc(100vw - 16px)",
             right: "max(16px, calc((100vw - 1200px) / 2))",
           }}
-          onClick={() => toggleModal()}
+          onClick={toggleCart}
         >
           <CartSVG width={24} />
         </div>
@@ -457,14 +459,14 @@ export default function Shops() {
           </div>
         </div>
         <CartModal
-          isOpen={isModalOpen}
-          onClose={toggleModal}
+          isOpen={isCartOpen}
+          onClose={toggleCart}
           checkoutId={checkoutId}
           checkoutUrl={checkoutUrl}
         />
 
         {/* Élément fixe */}
-        {!isButtonVisible && !isModalOpen && (
+        {!isButtonVisible && !isCartOpen && (
           <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50 px-4">
             <div className="bg-black bg-opacity-70 backdrop-blur-md text-white px-4 py-3 rounded-lg shadow-lg flex items-center justify-between w-full max-w-sm sm:max-w-lg md:max-w-4xl lg:max-w-6xl">
               {/* Texte */}

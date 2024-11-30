@@ -7,18 +7,11 @@ import { logEvent } from "firebase/analytics";
 import { Footer } from "~/components/Footer";
 import { BottomBanner } from "~/components/BottomBanner";
 
-import { initializeFirebase, analytics } from "../utils/firebase";
+import { analytics } from "../utils/firebase";
 import { PreOrderButton } from "~/components/PreOrderButton";
+import Link from "next/link";
 
 export default function Home() {
-  useEffect(() => {
-    initializeFirebase();
-
-    if (analytics) {
-      logEvent(analytics, "website");
-    }
-  }, []);
-
   const handleShopPress = () => {
     console.log("navigate on shop");
   };
@@ -254,7 +247,7 @@ export default function Home() {
         </div>
 
         <PreOrderButton onPress={handleShopPress}>
-          Voir la boutique
+          <Link href="/shops"> Voir la boutique</Link>
         </PreOrderButton>
       </BottomBanner>
       <Footer color="bg-black" />

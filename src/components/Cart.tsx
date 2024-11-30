@@ -4,6 +4,8 @@ import {
   updateLineItemQuantity,
   deleteLineItem,
 } from "~/api/checkout";
+import { trackEvent } from "~/utils/firebase";
+
 import { ThreeDScene } from "./CardBox";
 
 interface CartModalProps {
@@ -41,6 +43,10 @@ const CartModal: React.FC<CartModalProps> = ({
       const items = checkout.lineItems.edges.map((edge: any) => edge.node);
       setCartItems(items);
       setSubtotal(checkout.subtotalPriceV2.amount);
+
+      if (items.length === 0) {
+        trackEvent("cart_empty", { checkoutId });
+      }
     } catch (error) {
       console.error(
         "Erreur lors de la récupération des articles du panier :",
@@ -57,7 +63,17 @@ const CartModal: React.FC<CartModalProps> = ({
       );
       setCartItems(updatedItems);
       setSubtotal(updatedCheckout.subtotalPriceV2.amount);
+
+      trackEvent("cart_item_deleted", {
+        checkoutId,
+        lineItemId,
+      });
     } catch (error) {
+      trackEvent("cart_item_delete_error", {
+        checkoutId,
+        lineItemId,
+        error: error,
+      });
       console.error("Erreur lors de la suppression de l'article :", error);
     }
   };
@@ -79,8 +95,30 @@ const CartModal: React.FC<CartModalProps> = ({
       );
       setCartItems(updatedItems);
       setSubtotal(updatedCheckout.subtotalPriceV2.amount);
+
+      trackEvent("cart_item_quantity_updated", {
+        checkoutId,
+        lineItemId,
+        newQuantity,
+      });
     } catch (error) {
       console.error("Erreur lors de la mise à jour de la quantité :", error);
+      trackEvent("cart_item_quantity_update_error", {
+        checkoutId,
+        lineItemId,
+        newQuantity,
+        error: error,
+      });
+    }
+  };
+
+  const handleCheckout = () => {
+    if (checkoutUrl) {
+      trackEvent("cart_checkout_continue", { checkoutId, subtotal });
+      window.location.href = checkoutUrl;
+    } else {
+      console.error("URL du checkout manquante");
+      trackEvent("cart_checkout_missing_url", { checkoutId });
     }
   };
 
@@ -178,13 +216,7 @@ const CartModal: React.FC<CartModalProps> = ({
             </div>
             <button
               className="w-full bg-white text-gray-800 font-semibold py-3 rounded-md hover:bg-gray-100 transition-all"
-              onClick={() => {
-                if (checkoutUrl) {
-                  window.location.href = checkoutUrl;
-                } else {
-                  console.error("URL du checkout manquante");
-                }
-              }}
+              onClick={handleCheckout}
             >
               Continuer →
             </button>

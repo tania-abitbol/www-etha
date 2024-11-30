@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto, Lexend_Deca, Pacifico, Baloo_2 } from "next/font/google";
+
 import "./globals.css";
+import { ClientTracking } from "./ClientTracking";
 
 const pacifico = Pacifico({
   subsets: ["latin"],
@@ -43,6 +45,7 @@ export default function RootLayout({
       <body
         className={`${roboto.variable} ${lexendDeca.variable} ${pacifico.variable} ${baloo.variable}`}
       >
+        <ClientTracking />
         {children}
       </body>
     </html>
