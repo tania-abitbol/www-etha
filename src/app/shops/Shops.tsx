@@ -189,6 +189,11 @@ export default function Shops() {
           state === "bae" ? "bg-bae-primaryLighter" : "bg-vouv-primaryLighter"
         } `}
       />
+      <div className="bg-black h-6 fixed z-50 top-2 w-full flex flex-col justify-center align-middle">
+        <p className="text-center font-baloo">
+          Offre black friday : -20% sur tout nos jeux !
+        </p>
+      </div>
 
       <div className="relative max-w-4xl lg:max-w-6xl mx-auto px-4">
         <div
@@ -266,12 +271,21 @@ export default function Shops() {
               className="flex items-center gap-4 justify-between md:items-center mb-6"
               ref={buttonRef}
             >
-              <p className="text-xl text-black md:text-2xl">
-                14,95 €{" "}
-                <span className="text-xs text-gray-800 self-end justify-end align-top">
-                  *
-                </span>
-              </p>
+              <div className="flex flex-row gap-2  items-center">
+                <p className="text-xl line-through text-gray-500 md:text-2xl">
+                  14,95 €{" "}
+                </p>
+                <p className="text-xl text-black md:text-2xl">
+                  11,96 €{" "}
+                  <span className="text-xs text-gray-800 self-end justify-end align-top">
+                    *
+                  </span>
+                </p>
+                <div className="bg-black rounded-lg flex flex-col justify-center h-6 px-1 align-middle">
+                  <p className="text-xs">-20%</p>
+                </div>
+              </div>
+
               <PreOrderButton onPress={handlePreOrder} hasIcon type={state}>
                 Commander
               </PreOrderButton>
@@ -508,7 +522,15 @@ export default function Shops() {
                   Première édition de{" "}
                   {state === "bae" ? "BAE ❤️" : "Vérité ou Vérité"}
                 </p>
-                <p className="text-xs sm:text-sm md:text-base">14,95 €</p>
+                <div className="flex flex-row gap-2">
+                  <p className="text-xs sm:text-sm md:text-base line-through text-gray-500">
+                    14,95 €
+                  </p>
+                  <p className="text-xs sm:text-sm md:text-base ">11,96 €</p>
+                  <div className="bg-black rounded-lg flex flex-col justify-center h-6 px-1 align-middle">
+                    <p className="text-xs">-20%</p>
+                  </div>
+                </div>
               </div>
 
               {/* Bouton */}
