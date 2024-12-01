@@ -268,7 +268,7 @@ export default function Shops() {
               />
             </div>
             <div
-              className="flex items-center gap-4 justify-between md:items-center mb-6"
+              className="flex flex-col md:flex-row items-center gap-4 justify-between md:items-center mb-6"
               ref={buttonRef}
             >
               <div className="flex flex-row gap-2  items-center">
@@ -286,7 +286,12 @@ export default function Shops() {
                 </div>
               </div>
 
-              <PreOrderButton onPress={handlePreOrder} hasIcon type={state}>
+              <PreOrderButton
+                onPress={handlePreOrder}
+                hasIcon
+                type={state}
+                fullWidth
+              >
                 Commander
               </PreOrderButton>
             </div>
