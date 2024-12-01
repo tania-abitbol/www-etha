@@ -27,6 +27,39 @@ export default function Shops() {
   const [checkoutUrl, setCheckoutUrl] = useState<string>("");
   const [checkoutId, setCheckoutId] = useState<string>("");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [hover, setHover] = useState<"bae" | "vouv" | null>(null);
+  const sliderRef = useRef(null);
+  const baeRef = useRef(null);
+  const vouvRef = useRef(null);
+  const [sliderStyle, setSliderStyle] = useState({});
+
+  useEffect(() => {
+    const activeRef =
+      hover && hover !== state
+        ? hover === "bae"
+          ? baeRef.current
+          : vouvRef.current
+        : state === "bae"
+        ? baeRef.current
+        : vouvRef.current;
+
+    if (activeRef && sliderRef.current) {
+      const { offsetLeft, offsetWidth } = activeRef;
+      const padding = 16;
+      setSliderStyle({
+        left: `${offsetLeft - padding / 2}px`,
+        width: `${offsetWidth + padding}px`,
+        backgroundColor:
+          hover && hover !== state
+            ? activeRef === baeRef.current
+              ? "#FF4F7880"
+              : "#3993DD80"
+            : activeRef === baeRef.current
+            ? "#EC4554"
+            : "#3993DD",
+      });
+    }
+  }, [state, hover]);
 
   const searchParams = useSearchParams();
   const scrollTracked = useRef({ 25: false, 50: false, 75: false, 95: false });
@@ -143,7 +176,7 @@ export default function Shops() {
     }
   };
 
-  const handleClick = (value: "bae" | "vouv") => {
+  const handleChangeState = (value: "bae" | "vouv") => {
     setState(value);
     trackEvent("state_change", { state: value });
   };
@@ -209,30 +242,38 @@ export default function Shops() {
 
         {/* Header */}
         <div className="relative text-center mb-8 md:mb-16 pt-8 md:pt-0">
-          <div className="relative flex items-center justify-center transition-all duration-500  h-24 lg:h-32">
-            {/* BAE */}
-            <h1
-              className={`absolute top-1/2 transition-all -translate-y-1/2 duration-500 cursor-pointer font-bold font-baloo ${
-                state === "bae"
-                  ? "text-bae-primary text-5xl md:text-6xl lg:text-8xl left-1/2 transform -translate-x-1/2"
-                  : "text-gray-400 text-5xl md:text-4xl left-[7%] sm:left-[20%] md:left-[30%] hover:text-bae-primary"
-              }`}
-              onClick={() => handleClick("bae")}
-            >
-              BAE
-            </h1>
+          <div className="flex  justify-center m-10">
+            <div className="relative flex flex-row bg-gray-800 p-2 rounded-full gap-4">
+              <div
+                ref={sliderRef}
+                className="absolute top-0 bottom-0 rounded-full transition-all duration-300 ease-in-out"
+                style={sliderStyle}
+              ></div>
 
-            {/* VouV */}
-            <h1
-              className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-500 cursor-pointer font-bold font-baloo ${
-                state === "vouv"
-                  ? "text-vouv-primary text-5xl md:text-6xl lg:text-8xl"
-                  : "text-gray-400 text-5xl md:text-4xl left-[80%] sm:left-[70%] md:left-[65%] top-1/2 transform -translate-y-1/2 hover:text-vouv-primary"
-              }`}
-              onClick={() => handleClick("vouv")}
-            >
-              VouV
-            </h1>
+              <div
+                ref={baeRef}
+                className="relative z-10 rounded-full px-4 py-2 cursor-pointer"
+                onClick={() => handleChangeState("bae")}
+                onMouseEnter={() => setHover("bae")}
+                onMouseLeave={() => setHover(null)}
+              >
+                <h1 className="text-xl font-baloo font-semibold text-white transition-colors duration-200 hover:text-yellow-400">
+                  Bae
+                </h1>
+              </div>
+
+              <div
+                ref={vouvRef}
+                className="relative z-10 rounded-full px-4 py-2 cursor-pointer"
+                onClick={() => handleChangeState("vouv")}
+                onMouseEnter={() => setHover("vouv")}
+                onMouseLeave={() => setHover(null)}
+              >
+                <h1 className="text-xl font-baloo font-semibold text-white transition-colors duration-200 hover:text-pink-400">
+                  Vérité ou Vérité
+                </h1>
+              </div>
+            </div>
           </div>
           <p className="text-gray-800 font-semibold font-inter text-base md:text-lg lg:text-xl ">
             Commander cette première édition
@@ -519,7 +560,7 @@ export default function Shops() {
 
         {/* Élément fixe */}
         {!isButtonVisible && !isCartOpen && (
-          <div className="fixed bottom-4 left-0 right-0 flex justify-center z-50 px-4">
+          <div className="sticky bottom-4 left-0 right-0 flex justify-center z-50 px-4">
             <div className="bg-black bg-opacity-70 backdrop-blur-md text-white px-4 py-3 rounded-lg shadow-lg flex items-center justify-between w-full max-w-sm sm:max-w-lg md:max-w-4xl lg:max-w-6xl">
               {/* Texte */}
               <div className="md:flex flex-col hidden">

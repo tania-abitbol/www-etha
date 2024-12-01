@@ -246,7 +246,7 @@ export default function Home() {
           </p>
         </div>
 
-        <PreOrderButton onPress={handleShopPress}>
+        <PreOrderButton onPress={handleShopPress} fullWidth>
           <Link href="/shops"> Voir la boutique</Link>
         </PreOrderButton>
       </BottomBanner>

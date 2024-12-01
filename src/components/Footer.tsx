@@ -1,7 +1,7 @@
 export const Footer = ({ color }: { color: string }) => {
   return (
     <footer
-      className={` ${color} px-12 py-9 flex justify-between items-start md:px-44 pt-12 mt-20 md:mt-40 m-auto`}
+      className={` ${color} px-12 py-9 flex justify-between items-start md:px-44 pt-12 mt-4 m-auto`}
     >
       <div className="md:flex md:gap-24">
         <div className="md:flex-col">
