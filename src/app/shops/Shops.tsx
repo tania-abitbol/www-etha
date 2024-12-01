@@ -450,7 +450,7 @@ export default function Shops() {
           <div className="flex flex-col items-center justify-center gap-8 md:flex-row md:gap-16">
             <div className="flex flex-col text-base font-semibold max-w-lg text-left">
               <p className="text-gray-800 font-baloo text-2xl leading-snug mb-4 md:text-3xl lg:text-4xl">
-                {state === "bae" ? "Vérité ou Vérité" : "Baez"}
+                {state === "bae" ? "Vérité ou Vérité" : "Bae"}
               </p>
               <p className="text-gray-800 flex-1 font-inter font-normal text-sm md:text-base lg:text-lg mb-8">
                 {state === "bae" ? (
