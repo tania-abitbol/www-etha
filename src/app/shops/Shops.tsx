@@ -15,6 +15,7 @@ import "~/app/globals.css";
 import { Card } from "~/components/Card";
 import { CartSVG } from "~/assets/icons/cart";
 import { Footer } from "~/components/Footer";
+import { CyberMondayBanner } from "~/components/CyberMonday";
 
 import { Paginator } from "~/components/Paginator";
 import { trackEvent } from "~/utils/firebase";
@@ -222,11 +223,7 @@ export default function Shops() {
           state === "bae" ? "bg-bae-primaryLighter" : "bg-vouv-primaryLighter"
         } `}
       />
-      <div className="bg-black h-6 fixed z-50 top-2 w-full flex flex-col justify-center align-middle">
-        <p className="text-center font-baloo">
-          Offre black friday : -20% sur tout nos jeux !
-        </p>
-      </div>
+      <CyberMondayBanner />
 
       <div className="relative max-w-4xl lg:max-w-6xl mx-auto px-4">
         <div
