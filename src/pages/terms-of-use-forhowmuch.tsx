@@ -1,11 +1,10 @@
 import React from "react";
-import { ProgressBar } from "~/components/progressBar";
+
 import "~/app/globals.css";
 
 const TermsOfUseForHowMuch = () => (
   <main>
     <div className="min-h-screen px-8 md:px-32 pt-12 max-w-5xl m-auto">
-      <ProgressBar />
       <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center text-blue-700">
         Terms of Use for For how much
       </h1>
