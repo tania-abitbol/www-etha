@@ -1,77 +1,91 @@
 import React from "react";
 import "~/app/globals.css";
 
-const TermsOfUseForTruthOrDare = () => (
+const TermsOfUseTruthOrDare = () => (
   <main>
     <div className="min-h-screen px-8 md:px-32 pt-12 max-w-5xl m-auto">
       <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center text-blue-700">
-        Terms of Use for Truth or dare
+        Terms of Use for Truth Or Dare
       </h1>
       <p className="text-lg mb-6 text-gray-700 leading-relaxed">
-        Welcome to Truth or dare. By using our app, you agree to comply with and
-        be bound by the following terms and conditions. Please review the
-        following terms carefully.
+        Welcome to Truth Or Dare. By using our app, you agree to comply with and
+        be bound by the following terms and conditions. Please review these
+        terms carefully before subscribing or using our services.
       </p>
 
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          1. Subscription Overview
+          1. Auto-Renewable Subscriptions
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Truth or dare offers subscriptions that grant access to premium
-          features and unlimited content. The available subscription plans are:
+          Truth Or Dare offers the following subscription plans:
         </p>
         <ul className="list-disc pl-5 text-lg text-gray-700 leading-relaxed">
-          <li>1-week subscription</li>
-          <li>1-month subscription</li>
-          <li>1-year subscription</li>
+          <li>Monthly Subscription: €4.99 per month</li>
+          <li>Annual Subscription: €11.99 per year</li>
         </ul>
-      </section>
-
-      <section className="mb-6">
-        <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          2. Pricing and Promotions
-        </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          All prices are subject to change without notice. Occasionally, we may
-          offer promotional pricing as incentives or limited-time opportunities
-          for qualifying purchases made during the promotional period. Due to
-          the time-sensitive nature of these promotions, we cannot offer price
-          protection or retroactive discounts or refunds for previous purchases
-          in the event of a price reduction or promotional offering.
+          Subscriptions automatically renew at the end of each billing period
+          unless canceled at least 24 hours before the current period ends. Your
+          iTunes account will be charged for renewal within 24 hours prior to
+          the end of the current period.
+        </p>
+        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
+          Subscriptions can be managed by the user, and auto-renewal can be
+          turned off through your Apple ID account settings. No refunds will be
+          issued for unused portions of a subscription period.
         </p>
       </section>
 
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          3. Payment and Renewal
+          2. Privacy Policy
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Payment will be charged to your iTunes Account at the time of purchase
-          confirmation. Subscriptions automatically renew unless auto-renew is
-          turned off at least 24 hours before the end of the current period.
-          Your account will be charged for renewal within 24 hours prior to the
-          end of the current period at the cost of the chosen subscription
-          package.
-        </p>
-        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Subscriptions may be managed by the user, and auto-renewal can be
-          turned off by going to the user's iTunes Account Settings after
-          purchase. No cancellation of the current subscription is allowed
-          during the active subscription period.
+          Your privacy is important to us. Please review our Privacy Policy at
+          the following link:
+          <a
+            href="https://etha.app/privacy-policy-forhowmuch"
+            className="text-blue-500 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Privacy Policy
+          </a>
+          .
         </p>
       </section>
 
       <section className="mb-6">
         <h2 className="text-2xl font-bold mb-3 text-blue-600">
-          4. Changes to the Terms of Use
+          3. Subscription Cancellation
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          Truth or dare reserves the right to modify these terms at any time. We
-          will do our best to notify you of any significant changes, but it is
-          your responsibility to review these terms periodically. Your continued
-          use of the app after changes have been made will constitute your
-          acceptance of the new terms.
+          To cancel your subscription:
+        </p>
+        <ol className="list-decimal pl-5 text-lg text-gray-700 leading-relaxed">
+          <li>Go to your Apple ID account settings.</li>
+          <li>
+            Select "Subscriptions" and choose the subscription you want to
+            manage.
+          </li>
+          <li>Click "Cancel Subscription."</li>
+        </ol>
+        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
+          After cancellation, you will continue to have access to premium
+          features until the end of the paid period.
+        </p>
+      </section>
+
+      <section className="mb-6">
+        <h2 className="text-2xl font-bold mb-3 text-blue-600">
+          4. General Terms
+        </h2>
+        <p className="text-lg mb-3 text-gray-700 leading-relaxed">
+          By using this app, you agree not to misuse the app or use it for any
+          unlawful purposes. Access to premium content is only available to
+          users with an active subscription. We reserve the right to modify
+          subscription terms or pricing with prior notice to users.
         </p>
       </section>
 
@@ -88,11 +102,11 @@ const TermsOfUseForTruthOrDare = () => (
       </section>
 
       <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-        By using Truth or dare, you agree to these Terms of Use. Thank you for
-        choosing Truth or dare!
+        By using Truth Or Dare, you agree to these Terms of Use. Thank you for
+        choosing Truth Or Dare!
       </p>
     </div>
   </main>
 );
 
-export default TermsOfUseForTruthOrDare;
+export default TermsOfUseTruthOrDare;

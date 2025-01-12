@@ -1,15 +1,15 @@
 import React from "react";
 import "~/app/globals.css";
 
-const TermsOfUseForHowMuch = () => (
+const TermsOfUseTruthOrTruth = () => (
   <main>
     <div className="min-h-screen px-8 md:px-32 pt-12 max-w-5xl m-auto">
       <h1 className="text-4xl md:text-6xl font-bold mb-6 text-center text-blue-700">
-        Terms of Use for For How Much
+        Terms of Use for Truth Or Truth
       </h1>
       <p className="text-lg mb-6 text-gray-700 leading-relaxed">
-        Welcome to For How Much. By using our app, you agree to comply with and
-        be bound by the following terms and conditions. Please review these
+        Welcome to Truth Or Truth. By using our app, you agree to comply with
+        and be bound by the following terms and conditions. Please review these
         terms carefully before subscribing or using our services.
       </p>
 
@@ -18,7 +18,7 @@ const TermsOfUseForHowMuch = () => (
           1. Auto-Renewable Subscriptions
         </h2>
         <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-          For How Much offers the following subscription plans:
+          Truth Or Truth offers the following subscription plans:
         </p>
         <ul className="list-disc pl-5 text-lg text-gray-700 leading-relaxed">
           <li>Monthly Subscription: €4.99 per month</li>
@@ -102,11 +102,11 @@ const TermsOfUseForHowMuch = () => (
       </section>
 
       <p className="text-lg mb-3 text-gray-700 leading-relaxed">
-        By using For how much, you agree to these Terms of Use. Thank you for
-        choosing For how much!
+        By using Truth Or Truth, you agree to these Terms of Use. Thank you for
+        choosing Truth Or Truth!
       </p>
     </div>
   </main>
 );
 
-export default TermsOfUseForHowMuch;
+export default TermsOfUseTruthOrTruth;
